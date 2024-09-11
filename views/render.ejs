@@ -1,0 +1,47 @@
+<%- include("partials/header.ejs") %>
+
+<div class="relative flex-1 sm:ml-60  h-screen">
+    <!-- Your page content goes here -->
+    <div class="flex flex-col">
+        <div class="h-20 w-full bg-pink-400 flex items-center justify-between pr-6">
+            <div class=" inset-y-0  flex items-center sm:hidden ml-2">
+              <!-- Mobile menu button-->
+              <button type="button" id="toggleSidebar"  class="relative inline-flex items-center justify-center rounded-md p-3 text-gray-400 hover:bg-gray-500 hover:text-white focus:outline-none focus:ring-1 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" id="menu-icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </button>
+            </div>
+            <p class="text-3xl sm:text-5xl font-semibold text-black uppercase"> <%= posts[0].category %></p>
+            <div class="flex space-x-2">
+              <p><a href="/create-post" class="text-sm sm:text-base">Create post</a></p>
+            </div>
+        </div>
+        <div class="w-auto grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-2 xl:grid-cols-4 xs:p-7 gap-8 md:p-6 md:gap-7" id="container">
+          <% posts.forEach((post) => { %>
+            <div class="w-80 xs:w-full mx-auto h-56 bg-white rounded-xl shadow-md overflow-hidden ">
+                <div class="">
+                  <div class="shrink-0">
+                    <img class="h-28 w-full object-cover " src="/images/<%= post.category %>.png" alt="Modern building architecture">
+                  </div>
+                  <div class="pl-8 pr-8 pb-8 relative">
+                    <div class=" h-8 flex space-x-2 group ">
+                      <a href="/books/<%= post.category %>/edit/<%= post.id %>" class="hidden group-hover:block bg-blue-500 rounded-md mt-1 px-2">Edit</a>
+                      <a href="/books/<%= post.category %>/delete/<%= post.id %>" class="hidden group-hover:block bg-red-500 rounded-md  mt-1 px-1">Delete</a>
+                    </div>
+                    <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold"><%= post.category %></div>
+                    <a href="/books/<%= post.category %>/<%= post.id %>" class="bloinline- block   mt-1 text-lg leading-tight font-medium text-black hover:underline"><%= post.title %></a>
+                  </div>
+                </div>
+            </div>
+          <% }) %>
+            
+        </div>
+
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

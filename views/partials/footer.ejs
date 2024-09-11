@@ -1,0 +1,38 @@
+<script>
+    // Dropdown functionality
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach((dropdown) => {
+        const button = dropdown.querySelector('button');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        button.addEventListener('click', () => {
+            dropdown.classList.toggle('open');
+        });
+
+        // Close the dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('open');
+            }
+        });
+    });
+</script>
+<script>
+    document.getElementById('toggleSidebar').addEventListener('click', function() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.remove('-translate-x-full'); // Slides in/out the sidebar
+    });
+</script> 
+<script>
+    document.getElementById('killSidebar').addEventListener('click', function() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.add('-translate-x-full'); // Slides in/out the sidebar
+    });
+</script> 
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+  
+</body>
+</html>
