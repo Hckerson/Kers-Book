@@ -819,7 +819,6 @@ app.post("/books/novella", (req, res) =>{
     category : req.body.category
   }
   novellaLastId = currentId;
-  console.log(newPost)
   novella.push(newPost)
   res.status(201).json();
 });
@@ -835,7 +834,6 @@ app.post("/books/chapter_book", (req, res) =>{
     category : req.body.category
   }
   chapter_bookLastId = currentId;
-  console.log(newPost)
   chapter_book.push(newPost)
   res.status(201).json();
 });
@@ -851,7 +849,6 @@ app.post("/books/fantasy", (req, res) =>{
     category : req.body.category
   }
   fantasyLastId = currentId;
-  console.log(newPost)
   fantasy.push(newPost)
   res.status(201).json();
 });
@@ -867,7 +864,7 @@ app.post("/books/horror", (req, res) =>{
     category : req.body.category
   }
   horrorLastId = currentId;
-  console.log(newPost)
+
   horror.push(newPost)
   res.status(201).json();
 });
@@ -883,7 +880,6 @@ app.post("/books/picture_book", (req, res) =>{
     category : req.body.category
   }
   picture_bookLastId = currentId;
-  console.log(newPost)
   picture_book.push(newPost)
   res.status(201).json();
 });
@@ -899,7 +895,6 @@ app.post("/books/romance", (req, res) =>{
     category : req.body.category
   }
   romanceLastId = currentId;
-  console.log(newPost)
   romance.push(newPost)
   res.status(201).json();
 });
@@ -915,7 +910,6 @@ app.post("/books/short_story", (req, res) =>{
     category : req.body.category
   }
   short_storyLastId = currentId;
-  console.log(newPost)
   short_story.push(newPost)
   res.status(201).json();
 });
