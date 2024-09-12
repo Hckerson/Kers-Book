@@ -170,7 +170,6 @@ app.get("/books/short_story/edit/:id", async (req, res) =>{
 app.post("/books/new_post", async (req, res) =>{
     try{
         const response = await axios.post(`${API_URL}/books/${req.body.category}`, req.body);
-        console.log(response.data);
         res.redirect("/");
     }catch(error){
         const errorMessage = error.response ? error.response.data : error.message;
@@ -181,7 +180,7 @@ app.post("/books/new_post", async (req, res) =>{
 app.post("/books/update/:id", async (req, res) => {
     try{
         const response = await axios.patch(`${API_URL}/books/${req.body.category}/${req.params.id}`, req.body);
-        console.log(response.data)
+
         res.redirect("/");
     }catch(error){
         const errorMessage = error.response ? error.response.data : error.message;
