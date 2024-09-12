@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Route to serve the index.html from the "views" directory
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    res.sendFile(__dirname + "/views/index.html")
 })
 
 app.get("/books/novella", async (req, res) => {
