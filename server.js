@@ -10,7 +10,7 @@ import axios from "axios";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const API_URL = "http://localhost:4000";
 
 // Serve static files from the "public" directory

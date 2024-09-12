@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"node server.js\" \"node index.js\"",
+    "start": "concurrently  \"node index.js\" \"node server.js\"",
     "dev": "npx tailwindcss -i ./views/input.css -o ./public/styles/output.css --watch "
   },
   "keywords": [],
@@ -19,6 +19,7 @@
     "axios": "^1.7.4",
     "body-parser": "^1.20.2",
     "ejs": "^3.1.10",
-    "express": "^5.0.0"
+    "express": "^5.0.0",
+    "concurrently": "^6.2.1"
   }
 }
