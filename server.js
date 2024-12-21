@@ -11,7 +11,9 @@ import axios from "axios";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = process.env.PORT || 3000;
-const API_URL = "http://localhost:4000";
+// const API_URL = "http://localhost:4000";
+const API_URL = "https://kers-book-1-ekhg.onrender.com";
+
 
 // Serve static files from the "public" directory
 app.use(express.static("public"));
